@@ -36,7 +36,7 @@ namespace MapEditorReborn.API.Features.Components
 
         private void Update()
         {
-            hub.TryOverridePosition(hub.transform.position, Vector3.up * i);
+            hub.TryOverridePosition(hub.transform.position);
             //hub.playerMovementSync.RotationSync = new Vector2(0, i);
 
             i += Speed;
