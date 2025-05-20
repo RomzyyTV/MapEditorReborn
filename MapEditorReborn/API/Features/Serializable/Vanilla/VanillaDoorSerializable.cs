@@ -4,7 +4,6 @@
     using Interactables.Interobjects.DoorUtils;
     using UnityEngine;
     using YamlDotNet.Serialization;
-    using KeycardPermissions = Interactables.Interobjects.DoorUtils.KeycardPermissions;
 
     public class VanillaDoorSerializable : DoorSerializable
     {
@@ -12,10 +11,10 @@
         {
         }
 
-        public VanillaDoorSerializable(bool isOpen, KeycardPermissions keycardPermissions, DoorDamageType ignoredDamageSources, float doorHealth)
+        public VanillaDoorSerializable(bool isOpen, DoorPermissionFlags keycardPermissions, DoorDamageType ignoredDamageSources, float doorHealth)
         {
             IsOpen = isOpen;
-            KeycardPermissions = keycardPermissions;
+            KeycardPermissions = (KeycardPermissions)keycardPermissions;
             IgnoredDamageSources = ignoredDamageSources;
             DoorHealth = doorHealth;
         }

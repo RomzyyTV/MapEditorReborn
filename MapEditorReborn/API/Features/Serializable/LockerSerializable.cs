@@ -5,6 +5,8 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
+using Exiled.API.Enums;
+
 namespace MapEditorReborn.API.Features.Serializable
 {
     using System;
@@ -25,7 +27,7 @@ namespace MapEditorReborn.API.Features.Serializable
             Chambers = JsonSerializer.Deserialize<Dictionary<int, List<LockerItemSerializable>>>(JsonSerializer.Serialize(block.Properties["Chambers"]));
             AllowedRoleTypes = JsonSerializer.Deserialize<List<string>>(JsonSerializer.Serialize(block.Properties["AllowedRoleTypes"]));
             ShuffleChambers = bool.Parse(block.Properties["ShuffleChambers"].ToString());
-            KeycardPermissions = (KeycardPermissions)Enum.Parse(typeof(KeycardPermissions), block.Properties["KeycardPermissions"].ToString());
+            KeycardPermissions = (DoorPermissionFlags)Enum.Parse(typeof(KeycardPermissions), block.Properties["KeycardPermissions"].ToString());
             OpenedChambers = ushort.Parse(block.Properties["OpenedChambers"].ToString());
             InteractLock = bool.Parse(block.Properties["InteractLock"].ToString());
             Chance = float.Parse(block.Properties["Chance"].ToString());
@@ -63,7 +65,7 @@ namespace MapEditorReborn.API.Features.Serializable
 
         public bool ShuffleChambers { get; set; } = true;
 
-        public KeycardPermissions KeycardPermissions { get; set; } = KeycardPermissions.None;
+        public DoorPermissionFlags KeycardPermissions { get; set; } = DoorPermissionFlags.None;
 
         public ushort OpenedChambers { get; set; }
 

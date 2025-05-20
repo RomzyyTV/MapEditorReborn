@@ -19,12 +19,12 @@
         public override DoorObject Init(DoorSerializable doorSerializable)
         {
             _breakableDoor = Door as BreakableDoor;
-            _vanillaBase = new(Door.IsOpen, Door.RequiredPermissions.RequiredPermissions, _breakableDoor?.IgnoredDamage ?? DoorDamageType.Weapon, _breakableDoor?.MaxHealth ?? 0f);
+            _vanillaBase = new(Door.IsOpen, Door.RequiredPermissions, _breakableDoor?.IgnoredDamage ?? DoorDamageType.Weapon, _breakableDoor?.MaxHealth ?? 0f);
             Base = doorSerializable;
 
             Door.IsOpen = doorSerializable.IsOpen;
             Door.ChangeLock(doorSerializable.IsLocked ? DoorLockType.SpecialDoorFeature : DoorLockType.None);
-            Door.RequiredPermissions.RequiredPermissions = doorSerializable.KeycardPermissions;
+            Door.RequiredPermissions = (DoorPermissionFlags)doorSerializable.KeycardPermissions;
             if (_breakableDoor != null)
             {
                 _breakableDoor.IgnoredDamage = doorSerializable.IgnoredDamageSources;
@@ -51,7 +51,7 @@
         {
             Door.IsOpen = _vanillaBase.IsOpen;
             Door.ChangeLock(DoorLockType.None);
-            Door.RequiredPermissions.RequiredPermissions = _vanillaBase.KeycardPermissions;
+            Door.RequiredPermissions = (DoorPermissionFlags)_vanillaBase.KeycardPermissions;
             if (_breakableDoor != null)
             {
                 _breakableDoor.IgnoredDamage = _vanillaBase.IgnoredDamageSources;
