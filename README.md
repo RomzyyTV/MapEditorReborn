@@ -22,6 +22,7 @@ Once your plugin will load, it will create directory `EXILED/Configs/MapEditorRe
 **Please contact me privately on discord (romzyytv) and do not contact Michal78900**
 
 # Credits
+- continue to be updated by [RomzyyTV](https://github.com/RomzyyTV)
 - Plugin made by [Michal78900](https://github.com/Michal78900)
 - Original plugin idea and code overhaul by [Killers0992](https://github.com/Killers0992)
 - Another code overhaul and documentation by [Nao](https://github.com/NaoUnderscore)
