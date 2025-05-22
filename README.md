@@ -14,7 +14,7 @@
 # Installation
 You will need **latest** [EXILED Version](https://github.com/Exiled-Team/EXILED/releases/latest) installed on your server.
 
-Put your [`MapEditorReborn.dll`](https://github.com/Michal78900/MapEditorReborn/releases/latest) file in `EXILED/Plugins` path.
+Put your [`MapEditorReborn.dll`](https://github.com/RomzyyTV/MapEditorReborn/releases/latest) file in `EXILED/Plugins` path.
 Once your plugin will load, it will create directory `EXILED/Configs/MapEditorReborn`; This directory will contain two sub-directories **Schematics** and **Maps**
 
 **[Full MER tutorial](https://docs.google.com/document/d/10V2PnqobeBFb2xTFIHSGmM2KK9_h2wethiVQdcjyhGc/edit?usp=sharing)**
