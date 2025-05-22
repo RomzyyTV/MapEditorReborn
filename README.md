@@ -12,7 +12,7 @@
 </div>
 
 # Installation
-You will need **latest** [EXILED Version](https://github.com/Exiled-Team/EXILED/releases/latest) installed on your server.
+You will need **latest** [EXILED Version](https://github.com/ExSLMod-Team/EXILED/releases) installed on your server.
 
 Put your [`MapEditorReborn.dll`](https://github.com/RomzyyTV/MapEditorReborn/releases/latest) file in `EXILED/Plugins` path.
 Once your plugin will load, it will create directory `EXILED/Configs/MapEditorReborn`; This directory will contain two sub-directories **Schematics** and **Maps**
