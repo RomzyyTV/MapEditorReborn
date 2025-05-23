@@ -19,7 +19,7 @@ Once your plugin will load, it will create directory `EXILED/Configs/MapEditorRe
 
 **[Full MER tutorial](https://docs.google.com/document/d/10V2PnqobeBFb2xTFIHSGmM2KK9_h2wethiVQdcjyhGc/edit?usp=sharing)**
 
-**Please contact me privately on discord (romzyytv) and do not contact Michal78900**
+**Please contact me privately on discord (romzyytv) or or creates a issues and do not contact Michal78900**
 
 # Credits
 - continue to be updated by [RomzyyTV](https://github.com/RomzyyTV)
