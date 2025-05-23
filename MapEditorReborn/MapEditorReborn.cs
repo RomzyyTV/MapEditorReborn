@@ -5,6 +5,8 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
+using MapEditorReborn.API.Features.Objects;
+
 namespace MapEditorReborn
 {
     using System;
@@ -56,6 +58,7 @@ namespace MapEditorReborn
         {
             Singleton = this;
 
+            if (Singleton.Config.AutoUpdate) { API.Extensions.Update.RegisterEvents(); }
             if (!Directory.Exists(PluginDir))
             {
                 Log.Warn("MapEditorReborn parent directory does not exist. Creating...");
@@ -152,26 +155,13 @@ namespace MapEditorReborn
                 Log.Debug("FileSystemWatcher enabled!");
             }
 
-            if (Config.PluginTracking)
-            {
-                _merClock = new Thread(ServerCountHandler.Loop)
-                {
-                    Name = "MER Clock",
-                    Priority = ThreadPriority.BelowNormal,
-                    IsBackground = true,
-                };
-
-                _merClock.Start();
-            }
-
             base.OnEnabled();
         }
 
         /// <inheritdoc/>
         public override void OnDisabled()
         {
-            Singleton = null;
-
+            if (Singleton.Config.AutoUpdate) { API.Extensions.Update.UnregisterEvents(); }
             MapEvent.Generated -= EventHandler.OnGenerated;
             ServerEvent.WaitingForPlayers -= EventHandler.OnWaitingForPlayers;
             ServerEvent.RoundStarted -= EventHandler.OnRoundStarted;
@@ -204,6 +194,7 @@ namespace MapEditorReborn
                 _fileSystemWatcher.Changed -= EventHandler.OnFileChanged;
 
             _merClock?.Abort();
+            Singleton = null;
 
             base.OnDisabled();
         }

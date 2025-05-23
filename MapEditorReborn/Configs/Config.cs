@@ -33,6 +33,14 @@ namespace MapEditorReborn.Configs
         /// </summary>
         [Description("Should object indicator be shown when you spawn an object.")]
         public bool ShowIndicatorOnSpawn { get; private set; } = true;
+        
+        /// <summary>
+        ///Gets a value indicating whether a backup of the plugin should be made
+        /// </summary>
+        [Description("backup of the plugin should be made")]
+        public bool EnableBackup { get; set; } = false;
+        
+        public bool AutoUpdate { get; set; } = true;
 
         /// <summary>
         /// Gets a value indicating whether the plugin's <see cref="System.IO.FileSystemWatcher"/> is enabled or not.
